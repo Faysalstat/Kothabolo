@@ -1,0 +1,65 @@
+.bg-dark{
+    background-color: #000;
+}
+.logo-color{
+    color:#D5A5BB
+}
+.title-color{
+    color:#C8BB4A
+}
+.text-color{
+    color:#F9A381
+}
+.text-color-gray{
+    color: #c4c4c4;
+}
+.navbar-inverse {
+    border-radius: 0px !important;
+}
+.circle {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%; /* This creates a circle shape */
+}
+.bg-B0C799{
+    background-color: #B0C799;
+}
+.bg-74B04D{
+    background-color: #74B04D;
+}
+.bg-B9BE00{
+    background-color: #B9BE00;
+}
+.bg-D42926{
+    background-color: #D42926;
+}
+.bg-FF6B01{
+    background-color: #FF6B01;
+}
+.bg-FFB300{
+    background-color: #FFB300;
+}
+.btn-45818E{
+    border-color: #45818E;
+    color: #fff;
+    background-color: #45818E !important;
+}
+.btn-FB6966{
+    color: #fff;
+    border-color: #000;
+    background-color: #FB6966 !important;
+}
+.btn-FCB3AC{
+    color: #fff;
+    border-color: #000;
+    background-color: #f1a8a1 !important;
+}
+
+.color-container {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+.text-white{
+    color: #fff;
+}
