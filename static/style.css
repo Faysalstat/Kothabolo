@@ -49,12 +49,22 @@
     border-color: #000;
     background-color: #FB6966 !important;
 }
+.btn-D42926{
+    color: #fff;
+    border-color: #D42926;
+    background-color: #D42926 !important;
+}
 .btn-FCB3AC{
     color: #fff;
     border-color: #000;
     background-color: #f1a8a1 !important;
 }
 
+.btn-666666{
+    color: #fff;
+    border-color: #666666;
+    background-color: #666666 !important;
+}
 .color-container {
     display: flex; /* Use flexbox */
     justify-content: center; /* Center horizontally */
@@ -62,4 +72,43 @@
 }
 .text-white{
     color: #fff;
+}
+.border-left{
+    border-left: 2px #fff solid;
+}
+.border-right{
+    border-right: 2px #fff solid;
+}
+.m-h-400{
+    min-height: 400px;
+}
+.m-t-50{
+    margin-top: 50px;
+}
+.p-t-100{
+    padding-top: 100px;
+}
+.pd-20{
+ padding: 20px;
+}
+.border-top{
+    border-top: 2px #fff solid;
+}
+.text-73A8E9{
+    color: #73A8E9;
+}
+.text-black{
+    color: #000;
+}
+.div-wellness{
+    height: 50px; width: 100px; background-color: #9A4464; padding: 5px;
+}
+.div-support{
+    height: 50px; width: 100px; background-color: #B8BE00;padding: 5px;
+}
+.div-resilience{
+    height: 50px; width: 100px; background-color: #ECDCE5;padding: 5px;
+}
+.div-empowerment{
+    height: 50px; width: 100px; background-color: #4EBBD6;padding: 5px;
 }
