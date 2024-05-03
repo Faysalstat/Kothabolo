@@ -65,6 +65,16 @@
     border-color: #666666;
     background-color: #666666 !important;
 }
+.btn-E6F8CC{
+    color: #000;
+    border-color: #E6F8CC;
+    background-color: #E6F8CC !important;
+}
+.btn-F7F2EB{
+    color: #000;
+    border-color: #F7F2EB;
+    background-color: #F7F2EB !important;
+}
 .color-container {
     display: flex; /* Use flexbox */
     justify-content: center; /* Center horizontally */
@@ -112,3 +122,59 @@
 .div-empowerment{
     height: 50px; width: 100px; background-color: #4EBBD6;padding: 5px;
 }
+.text-E5FC72{
+    color: #E5FC72;
+}
+.text-C97C13{
+    color: #C97C13;
+}
+.bg-white{
+    background-color: #fff;
+}
+.sidenav {
+    height: 100%;
+    width: 100%; /* Adjust width according to your preference */
+    top: 0;
+    left: 0;
+  }
+
+  /* Style the sidenav links */
+  .sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff; /* Adjust link color */
+    display: block;
+  }
+
+  /* Change color on hover */
+  .sidenav a:hover {
+    background-color: #fff; /* Adjust hover background color */
+    color: #000;
+  }
+  .pd-10{
+    padding: 10px;
+  }
+  .online-status{
+    background-color: #000;
+    border-radius: 40px;
+    width: 180px;
+    float: right;
+  }
+  .online-name{
+    color: #fff;
+    font-size: 24px;
+    font-weight: bolder;
+  }
+  .colored-div {
+    height: 80px; /* Adjust height as needed */
+  }
+
+  .div1 {
+    background-color: #DDEEC4; /* Adjust background color */
+  }
+
+  .div2 {
+    background-color: #333333; /* Adjust background color */
+    color: #fff;
+  }
