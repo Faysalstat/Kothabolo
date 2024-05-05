@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block head %}
+<title>User Master</title>
+{% endblock %} {% block body %}
+<div class="container">
+  <h1 style="text-align: center">Update User</h1>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="form">
+        <form action="/update/{{user.id}}" method="POST">
+          <div class="form-group">
+            <label for="username">User Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              placeholder="user name"
+              required
+              value="{{user.username}}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="email"
+              required
+              value="{{user.email}}"
+            />
+          </div>
+          <input type="submit" class="btn btn-warning" value="Update" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
