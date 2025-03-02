@@ -23,21 +23,27 @@
 }
 .bg-B0C799{
     background-color: #B0C799;
+    color: #fff !important;
 }
 .bg-74B04D{
     background-color: #74B04D;
+    color: #fff !important;
 }
 .bg-B9BE00{
     background-color: #B9BE00;
+    color: #fff !important;
 }
 .bg-D42926{
     background-color: #D42926;
+    color: #fff !important;
 }
 .bg-FF6B01{
     background-color: #FF6B01;
+    color: #fff !important;
 }
 .bg-FFB300{
     background-color: #FFB300;
+    color: #fff;;
 }
 .btn-45818E{
     border-color: #45818E;
@@ -177,4 +183,8 @@
   .div2 {
     background-color: #333333; /* Adjust background color */
     color: #fff;
+  }
+  .btn-menu{
+    margin: 0px 20px;
+    border-radius: 20px;
   }

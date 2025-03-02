@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
+<form action="/login" method="POST">
 <div class="row">
   <div class="col-md-offset-4 col-md-4">
     <div class="panel panel-primary">
@@ -7,6 +8,7 @@
           <label for="exampleInputEmail1">Email address</label>
           <input
             type="email"
+            name="email"
             class="form-control"
             id="exampleInputEmail1"
             placeholder="Email"
@@ -16,12 +18,13 @@
           <label for="exampleInputPassword1">Password</label>
           <input
             type="password"
+            name="password"
             class="form-control"
             id="exampleInputPassword1"
             placeholder="Password"
           />
         </div>
-        <a href="/profile" class="btn btn-FB6966 form-control">Submit</a>
+        <button type="submit" class="btn btn-FB6966 form-control">Submit</button>
         <br />
         <br />
         <div class="text-center">
@@ -33,6 +36,7 @@
     </div>
   </div>
 </div>
+</form>
 <div class="text-center">
   <a href="#">Learn about environmental awareness</a>
 </div>

@@ -3,6 +3,7 @@ from flask import render_template
 from flask import make_response
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
@@ -16,6 +17,18 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.username
+    
+class Profile(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(50), nullable=False)
+    birthDate = db.Column(db.String(50), default= "")
+    happyRating = db.Column(db.Integer, default= 0)
+    gender = db.Column(db.String(50), default= 0)
+
+    def __repr__(self):
+        return '<Profile %r>' % self.name
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
@@ -70,17 +83,47 @@ def update(id):
 def hello_world():
     return render_template('index.html')
 
-@app.route("/login")
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    if request.method == 'POST':
+        password = request.form['password']
+        email = request.form['email']
+        profile = Profile.query.filter_by(email=email).first()
+        if profile is None:
+            return redirect('/login')
+        else:
+            if profile.password == password:
+                return redirect('/profile/' + str(profile.id))
+            else:
+                return render_template('login.html', error='Incorrect password')
+    else:
+        return render_template('login.html')
 
-@app.route("/signup")
+@app.route('/signup', methods=['POST', 'GET'])
 def signup():
-    return render_template('signup.html')
+      if request.method == 'POST':
+        birthDate = request.form['birthDate']
+        email = request.form['email']
+        name = request.form['name']
+        happyRating = request.form['happyRating']
+        password = request.form['password']
+        email = request.form['email']
+        gender = request.form['gender']
+        new_user = Profile(birthDate=birthDate, email=email, name=name, happyRating=happyRating,password=password,gender=gender)
 
-@app.route("/profile")
-def profile():
-    return render_template('profile.html')
+        try:
+            db.session.add(new_user)
+            db.session.commit()
+            return redirect('/profile/'+ str(new_user.id))
+        except Exception as e:
+            return 'There was an issue adding creating profile'+e
+      else:
+        return render_template('signup.html')
+
+@app.route("/profile/<int:id>")
+def profile(id):
+        profile = Profile.query.get_or_404(id)
+        return render_template('profile.html', profile=profile)
 
 @app.errorhandler(404)
 def not_found(error):

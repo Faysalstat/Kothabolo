@@ -20,7 +20,7 @@
     {% block head %} {% endblock %}
 </head>
 <body class="bg-dark-and-white">
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-default">
         <div class="container">
           <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -36,10 +36,12 @@
         
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/profile">Profile</a></li>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a class="bg-D42926 btn-menu" href="/login">About</a></li>
+                <li><a class="bg-FF6B01 btn-menu" href="/">Home</a></li>
+                <li><a class="bg-D42926 btn-menu" href="/blog">Blog</a></li>
+                <li><a class="bg-D42926 btn-menu" href="/help">Help</a></li>
+                <!-- <li><a class="bg-FFB300 btn-menu" href="/profile/1">Profile</a></li> -->
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
