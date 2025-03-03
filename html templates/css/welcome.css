@@ -1,0 +1,84 @@
+.hero-section {
+    padding: 40px 0;
+    text-align: justify;
+    border-radius: 12px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #4d3b3b;
+}
+
+.hero-section p {
+    font-size: 16px;
+    color: #5c4c4c;
+    margin-bottom: 20px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.hero-buttons button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn {
+    background-color: #8e9a95;
+    color: white;
+    width: 100%;
+}
+
+.signup-btn {
+    background-color: #5a4c4c;
+    color: white;
+    width: 100%;
+}
+
+.login-btn:hover {
+    background-color: #6d7d76;
+}
+
+.signup-btn:hover {
+    background-color: #3d3333;
+}
+
+.info-btn {
+    background-color: #726f5c;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.content-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.content-section img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.content-text {
+    font-size: 14px;
+    color: #4d3b3b;
+    font-weight: 500;
+}
