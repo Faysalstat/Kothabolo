@@ -1,0 +1,214 @@
+{% extends 'base.html' %} {% block head %}
+<style>
+  .bg-dark-and-white {
+    background-color: #000;
+  }
+</style>
+{% endblock %} {% block body %}
+<div class="bg-dark">
+  <form action="/signup" method="POST" class="container" style="margin-top: -20px">
+    <div class="row m-t-50">
+      <div class="pd-10 col-md-6 p-t-100">
+        <div class="row">
+          <div
+            class="col-md-3"
+            style="height: 50px; width: 50px; background-color: #b8be00"
+          ></div>
+          <div class="col-md-9 form-group">
+            <label for="birthDate" class="text-white">Birth Date</label>
+            <input
+              type="date"
+              class="form-control"
+              id="birthDate"
+              name="birthDate"
+              placeholder="Birth Date"
+              required
+            />
+          </div>
+        </div>
+        <div class="row m-t-50">
+          <div
+            class="col-md-3"
+            style="height: 50px; width: 50px; background-color: #4ebb86"
+          ></div>
+          <div class="col-md-9 form-group">
+            <label for="happyRating" class="text-white"
+              >How Happy are you? (1-10)</label
+            >
+            <select
+              name="happyRating"
+              id="happyRating"
+              class="form-control"
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+        </div>
+        <div class="text-justify border-top pd-20 text-73A8E9">
+          Being a happier person isn't about having a perfect life. It's about finding joy in the imperfections. Its about appreciating The little moments - the warmth of the sun on your face, the laughter of your loved ones, the simple pleasure in our lives.
+        </div>
+        <div class="text-justify border-top pd-20">
+          <a href="#">Learn about environmental awareness</a>
+        </div>
+      </div>
+      <div class="pd-10 col-md-6 border-left">
+        <div>
+          <button class="btn btn-D42926 form-control" type="submit">
+            Create Your Profile!
+          </button>
+        </div>
+        <div class="border-top pd-20 m-t-50">
+          <span class="text-white">Shipping Information</span>
+          <br />
+          <br />
+          <div class="form-group">
+            <label for="name" class="text-white">Nick Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Nick Name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email" class="text-white">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="password" class="text-white">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Password"
+              name="password"
+              required
+            />
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="name" class="text-white">Your Main Problem</label>
+            <input
+              type="text"
+              class="form-control"
+              id="problem"
+              placeholder="Nick Name"
+            />
+          </div>
+          <div class="form-group">
+            <select
+              name="happydropdown"
+              id="happydropdown"
+              class="form-control"
+            >
+              <option value="Concern">Concern</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="problem"
+              placeholder="any other info"
+            />
+          </div>
+          <div class="form-group">
+            <a href="#">Enter manually</a>
+          </div>
+          <br />
+          <h4 class="text-white">BEST PART</h4>
+          <div class="form-group form-control">
+            <input type="radio" id="bestPart" name="bestPart" />
+            <label for="bestPart" class="text-black"
+              >Your journey in becomming a happier person >> Free</label
+            >
+          </div>
+          <div class="form-group form-control">
+            <input type="radio" id="bestPart2" name="bestPart" />
+            <label for="bestPart2" class="text-black"
+              >Be Unhappy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              $1000000</label
+            >
+          </div>
+          <h4 class="text-white">We Provide,</h4>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="div-wellness text-white">
+                <span class="fa fa-briefcase"></span><br />Welness
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="div-support">
+                <span class="fa fa-life-ring"></span><br />Support
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="div-resilience">
+                <span class="fa fa-caret-square-o-right"></span><br />Resilience
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="div-empowerment">
+                <span class="fa fa-caret-square-o-right"></span><br />Empowerment
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputAmount">Any Other Information</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="exampleInputAmount" placeholder="Optional -">
+              <div class="input-group-addon"><span class="fa fa-credit-card-alt"></span> &nbsp; <span class="fa fa-credit-card"></span></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <input
+              type="text"
+              class="form-control"
+              id="gender"
+              name="gender"
+              placeholder="Gender"
+            />
+            </div>
+            <div class="col-md-6">
+              <input
+                  type="text"
+                  class="form-control"
+                  id="Others"
+                  placeholder="Others"
+                />
+            </div>
+          </div>
+        </div>
+        <div>
+          <button type="Submit" class="btn btn-666666 form-control">
+            Start Your Journey
+          </a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<br>
+<br>
+<br>
+{% endblock %}

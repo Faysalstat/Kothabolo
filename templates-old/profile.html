@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% block head %} 
+<style>
+    .bg-dark-and-white {
+      background-color: #000;
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+<div class="bg-dark" style="margin-top: -20px">
+    <div class="container text-white">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-E5FC72">Become a happier you today</h3>
+                <h3 class="text-C97C13">"Happines is not something bla bla Happines is not something bla bla Happines is 
+                    not something bla bla Happines is not something bla bla"</h4>
+                    <br>
+        <div class="row text-black">
+            <div class="col-md-4">
+                <a href="#" class="btn btn-E6F8CC form-control">Dairy</a>
+            </div>
+            <div class="col-md-4">
+                <a href="#" class="btn btn-F7F2EB form-control">Motivation</a>
+            </div>
+        </div>
+            </div>
+            <div class="col-md-6 text-right">
+                <img src="/static/imges/img-01.png" style="width: 80%; height: 100%;"/>
+                <br>
+                Animating images
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="sidenav">
+                    <a href="#"><span class="fa fa-home"></span> Home</a>
+                    <a href="#"><span class="fa fa-search"></span> FAQ</a>
+                    <a href="#"><span class="fa fa-book"></span> Your Dairy</a>
+                    <a href="#"><span class="fa fa-plus"></span> Add</a>
+                    <a href="#"><span class="fa fa-heart"></span> Favourit</a>
+                    <a href="#"><span class="fa fa-pagelines"></span> Nature</a>
+                    <hr>
+                    <a href="#">Day 1</a>
+                    <a href="#">Day 2</a>
+                    <a href="#">Day 3</a>
+                    <a href="#">Day 4</a>
+                    <a href="#">Day 5</a>
+                    <a href="#">Day 6</a>
+                    <a href="#">Day 7</a>
+                    <a href="#">Day 8</a>
+                    <a href="#">Day 9</a>
+                    <a href="#">Day 10</a>
+                    <a href="#">Day 11</a>
+                  </div>
+            </div>
+            <div class="col-md-10  m-h-400 text-black">
+                <div style="padding: 20px;" class="bg-white">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span class="fa fa-3x fa-chevron-circle-left"></span> <span class="fa fa-3x fa-chevron-circle-right"></span>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <div class="online-status"><span class="fa fa-2x fa-circle" style="color: green;"></span> <span class="online-name">{{profile.name}} &nbsp;&nbsp;&nbsp;</span> 
+                                <span class="fa fa-2x fa-arrow-down"  style="color: #fff;"></span> &nbsp;&nbsp;&nbsp;</div>
+                        </div>
+                    </div>
+                    <div class="text-black">
+                        <h4>Hi {{profile.name}}, recently you've visited</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" style="padding-right: 30px; padding-bottom: 10px;">
+                            <div class="row">
+                                <div class="col-md-3 colored-div" style="background-color: #DDEEC4;">
+                                </div>
+                                <div class="col-md-9 colored-div div2">
+                                  <h2>My Dairy</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="padding-right: 30px; padding-bottom: 10px;">
+                            <div class="row">
+                                <div class="col-md-3 colored-div" style="background-color: #EA6640;">
+                                </div>
+                                <div class="col-md-9 colored-div div2">
+                                  <h2>Indentify my problem</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="padding-right: 30px; padding-bottom: 10px;">
+                            <div class="row">
+                                <div class="col-md-3 colored-div" style="background-color: #F5D601;">
+                                </div>
+                                <div class="col-md-9 colored-div div2">
+                                  <h2>Mativation</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="padding-right: 30px; padding-bottom: 10px;">
+                            <div class="row">
+                                <div class="col-md-3 colored-div" style="background-color: #E65B9E;">
+                                </div>
+                                <div class="col-md-9 colored-div div2">
+                                  <h2>Tracker</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="row">
+                    <div class="col-md-6"> <h3>More,</h3>
+                       </div>
+                    <div class="col-md-6 text-right"> <h3>SEE ALL</h3></div>
+                   </div>
+                    <div class="row">
+                        <div class="col-md-3 div2" style="margin: 20px;">
+                            <br>
+                            <img src="/static/imges/n-1.jpg" style="width: 100%; height: 300px;">
+                            <br>
+                            <h3>Seek Helo</h3>
+                        </div>
+                        <div class="col-md-3 div2" style="margin: 20px;">
+                            <br>
+                            <img src="/static/imges/n-2.jpg" style="width: 100%; height: 300px;">
+                            <br>
+                            <h3>Help the Nature</h3>
+                        </div>
+                        <div class="col-md-3 div2" style="margin: 20px;">
+                            <br>
+                            <img src="/static/imges/n-3.jpg" style="width: 100%; height: 300px;">
+                            <br>
+                            <h3>Talk to some one</h3>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row text-white">
+                    <div class="col-md-1 text-right" style="color: #FED3B6;">
+                        <span class="fa fa-quote-right fa-3x"></span>
+                    </div>
+                    <div class="col-md-11">
+                        <h4>Today's Quote</h3>
+                        <h5>"Happines is not the absence of problem, but the ability to deal with them," -Steve Maraboli</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

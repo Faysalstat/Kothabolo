@@ -174,3 +174,7 @@ body {
     background-color: #ff9aa2;
     color: white;
 }
+a{
+    text-decoration: none;
+    color: #000;
+}

@@ -81,7 +81,7 @@ def update(id):
 
 @app.route("/")
 def hello_world():
-    return render_template('index.html')
+    return render_template('welcome.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -124,6 +124,37 @@ def signup():
 def profile(id):
         profile = Profile.query.get_or_404(id)
         return render_template('profile.html', profile=profile)
+
+@app.route("/home")
+def goHome():
+    return render_template('index.html')
+@app.route("/blog")
+def goBlog():
+    return render_template('blog.html')
+
+@app.route("/profile")
+def goProfile():
+    return render_template('profile.html')
+
+@app.route("/help")
+def goHelp():
+    return render_template('help.html')
+
+@app.route("/latest-reflection")
+def goLatestReflection():
+    return render_template('latest-reflection.html')
+
+@app.route("/relief-anxity")
+def goReliefAnxity():
+    return render_template('anxiety-relief.html')
+
+@app.route("/relief-stress")
+def goReliefStress():
+    return render_template('stress-relief.html')
+
+@app.route("/check-in")
+def goCheckIn():
+    return render_template('mood-overthe-week.html')
 
 @app.errorhandler(404)
 def not_found(error):

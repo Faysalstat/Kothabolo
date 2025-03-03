@@ -1,43 +1,65 @@
-{% extends 'base.html' %} {% block head %} {% endblock %} {% block body %}
-<form action="/login" method="POST">
-<div class="row">
-  <div class="col-md-offset-4 col-md-4">
-    <div class="panel panel-primary">
-      <div class="panel-body">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input
-            type="email"
-            name="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            placeholder="Email"
-          />
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fde4ec;
+        }
+
+        .login-container {
+            width: 30%;
+            height: 450px;
+            margin: auto;
+            aspect-ratio: 1 / 1;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        input {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="container mt-3">
+            <h2>Stacked form</h2>
+            <form action="/login" method="POST">
+                <div class="mb-3 mt-3">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                </div>
+                <div class="form-check mb-3">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <br />
+                <a href="/signup" class="btn btn-FCB3AC">Create new Account</a>
+            </form>
         </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input
-            type="password"
-            name="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            placeholder="Password"
-          />
-        </div>
-        <button type="submit" class="btn btn-FB6966 form-control">Submit</button>
-        <br />
-        <br />
-        <div class="text-center">
-          <a href="/forget-pass">Forgot password?</a>
-          <br />
-          <a href="/signup" class="btn btn-FCB3AC">Create new Account</a>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
-</form>
-<div class="text-center">
-  <a href="#">Learn about environmental awareness</a>
-</div>
-{% endblock %}
+</body>
+
+</html>
