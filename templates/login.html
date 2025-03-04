@@ -7,59 +7,100 @@
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #fde4ec;
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            background: url('/static/img/login-bg.png') no-repeat center center;
+            background-color: #fee9e4;
+            background-size: 50% 60%;
         }
 
-        .login-container {
-            width: 30%;
-            height: 450px;
-            margin: auto;
-            aspect-ratio: 1 / 1;
-            background: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+        .divider:after,
+        .divider:before {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #eee;
+        }
+
+        .h-custom {
+            height: calc(100% - 73px);
+        }
+
+        .text-box {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            width: 350px;
+            color: black;
+        }
+
+        /* .text-box h1 {
+            font-size: 36px;
+            font-weight: bold;
+        } */
+
+        /* .text-box p {
+            font-size: 18px;
+        } */
+
+        .login-box {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            width: 350px;
+            background:#FFF;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
             padding: 20px;
+            color: rgb(19, 17, 17);
+            font-size: 18px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        input {
-            width: 100%;
+        @media (max-width: 450px) {
+            .h-custom {
+                height: 100%;
+            }
+
+            .l-img {
+                display: none;
+            }
         }
+      
     </style>
 </head>
 
 <body>
-    <div class="login-container">
-        <div class="container mt-3">
-            <h2>Stacked form</h2>
-            <form action="/login" method="POST">
-                <div class="mb-3 mt-3">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" required placeholder="Enter email" name="email">
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="text-box">
+                    <h1 class="display-1">Welcome Back!</h1>
+                    <p class="display-6">Log in to continue accessing your account.</p>
                 </div>
-                <div class="mb-3">
-                    <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd" required placeholder="Enter password" name="password">
+                <div class="login-box">
+                    <h4 class="text-center mb-3">Login</h4>
+                    <form action="/login" method="POST">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter password">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                        <a href="/signup" class="btn btn-secondary mt-2 w-100">Create new Account</a>
+                    </form>
                 </div>
-                <div class="form-check mb-3">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" name="remember"> Remember me
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-                <br />
-                <a href="/signup" class="btn btn-FCB3AC">Create new Account</a>
-            </form>
+            </div>
         </div>
-    </div>
+    </section>
 </body>
 
 </html>
