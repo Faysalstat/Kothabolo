@@ -181,7 +181,12 @@ def goHome():
     return render_template('index.html', profile=profile)
 @app.route("/blog")
 def goBlog():
-    return render_template('blog.html')
+    if 'user_id' not in session:
+        return redirect('/login')  # Redirect to signup if no user is in session
+    
+    user_id = session['user_id']
+    profile = Profile.query.get_or_404(user_id)
+    return render_template('blog.html', profile=profile)
 
 @app.route("/profile")
 def goProfile():
@@ -212,15 +217,30 @@ def goLatestReflection():
 
 @app.route("/relief-anxity")
 def goReliefAnxity():
-    return render_template('anxiety-relief.html')
+    if 'user_id' not in session:
+        return redirect('/login')  # Redirect to signup if no user is in session
+    
+    user_id = session['user_id']
+    profile = Profile.query.get_or_404(user_id)
+    return render_template('anxiety-relief.html', profile=profile)
 
 @app.route("/relief-stress")
 def goReliefStress():
-    return render_template('stress-relief.html')
+    if 'user_id' not in session:
+        return redirect('/login')  # Redirect to signup if no user is in session
+    
+    user_id = session['user_id']
+    profile = Profile.query.get_or_404(user_id)
+    return render_template('stress-relief.html', profile=profile)
 
 @app.route("/check-in")
 def goCheckIn():
-    return render_template('mood-overthe-week.html')
+    if 'user_id' not in session:
+        return redirect('/login')  # Redirect to signup if no user is in session
+    
+    user_id = session['user_id']
+    profile = Profile.query.get_or_404(user_id)
+    return render_template('mood-overthe-week.html', profile=profile)
 
 @app.errorhandler(404)
 def not_found(error):
