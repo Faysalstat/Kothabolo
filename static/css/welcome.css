@@ -82,3 +82,7 @@
     color: #4d3b3b;
     font-weight: 500;
 }
+
+.img-fluid{
+    border-radius: 10px;
+}
