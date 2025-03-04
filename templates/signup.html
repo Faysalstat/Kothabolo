@@ -27,6 +27,13 @@
             width: 100%;
         }
 
+            .btn-custom:hover{
+            background-color: #86757c !important;
+            color: white;
+            border: none;
+            width: 100%;
+            }
+
         .plan-option {
             background-color: #cce5ff;
             border-radius: 5px;
@@ -67,9 +74,9 @@
 
 <body>
     <div class="container-fluid">
-
-        <div class="main-content" style="padding-bottom: 100px;">
-            <!-- <nav class="navbar navbar-light navbar-custom d-flex justify-content-between">
+        <form action="/signup" method="POST">
+            <div class="main-content" style="padding-bottom: 100px;">
+                <!-- <nav class="navbar navbar-light navbar-custom d-flex justify-content-between">
                 <h4>SpeakYou</h4>
                 <div>
                     <button class="btn btn-light">About</button>
@@ -79,50 +86,59 @@
                 </div>
             </nav> -->
 
-            <div class="container-fluid mt-4 content-body">
-                <div class="row">
-                    <!-- Left Side -->
-                    <div class="col-md-5 border-rt">
-                        <div class="custom-card">
-                            <h3 class="fw-bold">Create Profile</h3>
-                            <div class="mb-3">
-                                <label class="fw-bold">Birthdate:</label>
-                                <input type="date" class="form-control" placeholder="DD/MM/YY">
-                            </div>
-                            <div class="mb-3">
-                                <label class="fw-bold">Expectation:</label>
-                                <input type="text" class="form-control" placeholder="What do you expect?">
+                <div class="container-fluid mt-4 content-body">
+                    <div class="row">
+                        <!-- Left Side -->
+                        <div class="col-md-5 border-rt">
+                            <div class="custom-card">
+                                <h3 class="fw-bold">Create Profile</h3>
+                                <div class="mb-3">
+                                    <label class="fw-bold">Birthdate:</label>
+                                    <input type="date" name="birthDate" class="form-control" placeholder="DD/MM/YY">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="fw-bold">Expectation:</label>
+                                    <input type="text" name="expectation" class="form-control" placeholder="What do you expect?">
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Right Side -->
-                    <div class="col-md-7">
-                        <div class="custom-card">
-                            <h1 class="mb-3">Create Profile</h1>
+                        <!-- Right Side -->
+                        <div class="col-md-7">
+                            <div class="custom-card">
+                                <h1 class="mb-3">Create Profile</h1>
+                                <label class="fw-bold">Name:</label>
+                                <input type="text" name="name" class="form-control mb-3" placeholder="Write your name">
+                                <label class="fw-bold">Email:</label>
+                                <input type="email" name="email" class="form-control mb-3" placeholder="Write your name">
+                                <label class="fw-bold">Password:</label>
+                                <input type="password" name="password" class="form-control mb-3" placeholder="Write your name">
+                                <div class="form-check plan-option">
+                                    <div class="form-check-label" for="plan1">
+                                        <input class="form-check-input" type="radio" name="package" id="plan1" value="free" checked>  
+                                       <label for="plan1"> Build healthy habits for a healthy life</label> <span for="plan1" class="float-end">$0.00</span>
+                                    </div>
+                                </div>
+                                <div class="form-check plan-option">
+                                    <div class="form-check-label" for="plan1">
+                                        <input class="form-check-input" type="radio" name="package" id="plan2" value="paid">  
+                                       <label for="plan2"> Lead an unhealthy draining life</label> <span for="plan2" class="float-end">$100.00</span>
+                                    </div>
+                                </div>
+                                <h6 class="fw-bold mb-3">We Provide:</h6>
+                                <span class="feature-badge bg-wellness">Wellness</span>
+                                <span class="feature-badge bg-support">Support</span>
+                                <span class="feature-badge bg-resilience">Resilience</span>
+                                <span class="feature-badge bg-empower">Empower</span>
 
-                            <label class="fw-bold">Name:</label>
-                            <input type="text" class="form-control mb-3" placeholder="Write your name">
-
-                            <h6 class="fw-bold text-primary">Choose Your Plan</h6>
-                            <div class="plan-option">Build healthy habits for a healthy life <span
-                                    class="float-end">$0.00</span></div>
-                            <div class="plan-option">Lead an unhealthy draining life <span class="float-end">$100</span>
+                                <button class="btn btn-lg btn-custom mt-3" type="submit">Start Your Journey</button>
+                                <p class="text-center mt-2"><a href="/login">Already signup? Login now...</a></p>
                             </div>
-
-                            <h6 class="fw-bold mb-3">We Provide:</h6>
-                            <span class="feature-badge bg-wellness">Wellness</span>
-                            <span class="feature-badge bg-support">Support</span>
-                            <span class="feature-badge bg-resilience">Resilience</span>
-                            <span class="feature-badge bg-empower">Empower</span>
-
-                            <button class="btn btn-lg btn-custom mt-3">Start Your Journey</button>
-                            <p class="text-center mt-2"><a href="/login">Already signup? Login now...</a></p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </body>
 

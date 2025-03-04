@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, session
 from flask import render_template
 from flask import make_response
 from flask import Flask
@@ -6,6 +6,8 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
+app.secret_key = 'Sfdfds1223129xcsdfasd#sdfasd'  # Set a secret key for session security
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
 
@@ -24,8 +26,8 @@ class Profile(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(50), nullable=False)
     birthDate = db.Column(db.String(50), default= "")
-    happyRating = db.Column(db.Integer, default= 0)
-    gender = db.Column(db.String(50), default= 0)
+    package = db.Column(db.String(50), default= "")
+    expectation = db.Column(db.String(500), default= "")
 
     def __repr__(self):
         return '<Profile %r>' % self.name
@@ -93,7 +95,8 @@ def login():
             return redirect('/login')
         else:
             if profile.password == password:
-                return redirect('/profile/' + str(profile.id))
+                session['user_id'] = profile.id
+                return redirect('/profile')
             else:
                 return render_template('login.html', error='Incorrect password')
     else:
@@ -105,44 +108,68 @@ def signup():
         birthDate = request.form['birthDate']
         email = request.form['email']
         name = request.form['name']
-        happyRating = request.form['happyRating']
         password = request.form['password']
-        email = request.form['email']
-        gender = request.form['gender']
-        new_user = Profile(birthDate=birthDate, email=email, name=name, happyRating=happyRating,password=password,gender=gender)
+        package = request.form['package']
+        expectation = request.form['expectation']
+        new_user = Profile(birthDate=birthDate, email=email, name=name, password=password,package=package, expectation=expectation)
 
         try:
             db.session.add(new_user)
             db.session.commit()
-            return redirect('/profile/'+ str(new_user.id))
+            session['user_id'] = new_user.id
+            return redirect('/profile')
         except Exception as e:
             return 'There was an issue adding creating profile'+e
       else:
         return render_template('signup.html')
 
-@app.route("/profile/<int:id>")
-def profile(id):
-        profile = Profile.query.get_or_404(id)
-        return render_template('profile.html', profile=profile)
+@app.route("/profile")
+def profile():
+    if 'user_id' not in session:
+        return redirect('/login')  # Redirect to signup if no user is in session
+    
+    user_id = session['user_id']
+    profile = Profile.query.get_or_404(user_id)
+    return render_template('profile.html', profile=profile)
 
 @app.route("/home")
 def goHome():
-    return render_template('index.html')
+    if 'user_id' not in session:
+        return redirect('/login')  # Redirect to signup if no user is in session
+    
+    user_id = session['user_id']
+    profile = Profile.query.get_or_404(user_id)
+    return render_template('index.html', profile=profile)
 @app.route("/blog")
 def goBlog():
     return render_template('blog.html')
 
 @app.route("/profile")
 def goProfile():
-    return render_template('profile.html')
+    if 'user_id' not in session:
+        return redirect('/login')  # Redirect to signup if no user is in session
+    
+    user_id = session['user_id']
+    profile = Profile.query.get_or_404(user_id)
+    return render_template('profile.html', profile=profile)
 
 @app.route("/help")
 def goHelp():
-    return render_template('help.html')
+    if 'user_id' not in session:
+        return redirect('/login')  # Redirect to signup if no user is in session
+    
+    user_id = session['user_id']
+    profile = Profile.query.get_or_404(user_id)
+    return render_template('help.html', profile=profile)
 
 @app.route("/latest-reflection")
 def goLatestReflection():
-    return render_template('latest-reflection.html')
+    if 'user_id' not in session:
+        return redirect('/login')  # Redirect to signup if no user is in session
+    
+    user_id = session['user_id']
+    profile = Profile.query.get_or_404(user_id)
+    return render_template('latest-reflection.html', profile=profile)
 
 @app.route("/relief-anxity")
 def goReliefAnxity():
