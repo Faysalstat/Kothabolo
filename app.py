@@ -12,13 +12,21 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
 
 
-class User(db.Model):
+class Mode(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
+    userId = db.Column(db.Integer)
+    mode = db.Column(db.String(1000), nullable=True)
+    score = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
-        return '<User %r>' % self.username
+        return '<Mode %r>' % self.userId
+class Dairy(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    userId = db.Column(db.Integer)
+    note = db.Column(db.String(1000), nullable=False)
+
+    def __repr__(self):
+        return '<Mode %r>' % self.userId
     
 class Profile(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -35,50 +43,81 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
 
-@app.route('/user', methods=['POST', 'GET'])
-def user():
-    if request.method == 'POST':
-        username = request.form['username']
-        email = request.form['email']
-        new_user = User(username=username, email=email)
+@app.route('/mode', methods=['GET', 'POST'])
+def mode():
+    if 'user_id' not in session:
+        return redirect('/login')  # Redirect to signup if no user is in session
+    user_id = session['user_id']
 
+    if request.method == 'POST':
+        userId = user_id
+        mode = request.form['mode']
+        score = request.form['score']
+        new_mode = Mode(userId=userId, mode=mode, score=score)
         try:
-            db.session.add(new_user)
+            db.session.add(new_mode)
             db.session.commit()
-            return redirect('/user')
+            return redirect('/mode')
         except:
             return 'There was an issue adding your user'
-
     else:
-        users = User.query.order_by(User.id).all()
-        return render_template('user.html', users=users)
-@app.route('/delete/<int:id>')
-def delete(id):
-    user_to_delete = User.query.get_or_404(id)
+        return render_template('mode.html')
 
-    try:
-        db.session.delete(user_to_delete)
-        db.session.commit()
-        return redirect('/user')
-    except:
-        return 'There was a problem deleting that task'
-    
-@app.route('/update/<int:id>', methods=['GET', 'POST'])
-def update(id):
-    user = User.query.get_or_404(id)
+@app.route('/dairy', methods=['GET', 'POST'])
+def dairy():
+    if 'user_id' not in session:
+        return redirect('/login')  # Redirect to login if no user is in session
+
+    user_id = session['user_id']
+    profile = Profile.query.get_or_404(user_id)
+
+    # Fetch all diary entries for the logged-in user
+    user_diaries = Dairy.query.filter_by(userId=user_id).all()
 
     if request.method == 'POST':
-        user.username = request.form['username']
-        user.email = request.form['email']
+        note = request.form['note']
+        new_dairy = Dairy(userId=user_id, note=note)
 
         try:
+            db.session.add(new_dairy)
             db.session.commit()
-            return redirect('/user')
-        except:
-            return 'There was an issue updating your task'
+            return redirect('/dairy')
+        except Exception as e:
+            db.session.rollback()
+            print(f"Error: {e}")  # Debugging log
+            return 'There was an issue adding your diary'
+        finally:
+            db.session.close()
 
-    else:
-        return render_template('update.html', user=user)
+    return render_template('dairy.html', profile=profile, user_diaries=user_diaries)
+
+# @app.route('/delete/<int:id>')
+# def delete(id):
+#     user_to_delete = User.query.get_or_404(id)
+
+#     try:
+#         db.session.delete(user_to_delete)
+#         db.session.commit()
+#         return redirect('/user')
+#     except:
+#         return 'There was a problem deleting that task'
+    
+# @app.route('/update/<int:id>', methods=['GET', 'POST'])
+# def update(id):
+#     user = User.query.get_or_404(id)
+
+#     if request.method == 'POST':
+#         user.username = request.form['username']
+#         user.email = request.form['email']
+
+#         try:
+#             db.session.commit()
+#             return redirect('/user')
+#         except:
+#             return 'There was an issue updating your task'
+
+#     else:
+#         return render_template('update.html', user=user)
 
 
 @app.route("/")

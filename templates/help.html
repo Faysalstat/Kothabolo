@@ -16,14 +16,7 @@
         {% include 'sidenav.html' %}
 
         <div class="main-content" style="padding-bottom: 100px; margin-bottom: 150px;">
-            <nav class="navbar navbar-light navbar-custom d-flex justify-content-between">
-                <h4>SpeakYou</h4>
-                <div>
-                    <a href="/home"><button class="btn btn-light">Home</button></a>
-                    <a href="/blog"><button class="btn btn-light">Blog</button></a>
-                    <a href="/profile"><button class="btn btn-light">Profile</button></a>
-                </div>
-            </nav>
+            {% include 'topnavbar.html' %}
 
             <div class="container mt-5 text-center">
                 <!-- Immediate Help Section -->
@@ -75,33 +68,7 @@
                 </div>
             </div>
         </div>
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h3>SpeakYou</h3>
-                        <p>Your journey to a better you starts here.</p>
-                    </div>
-                    <div class="col-md-4 quick-links">
-                        <h6>Quick Links</h6>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Help</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h3>Contact Us</h3>
-                        <p>123, ABC Street, XYZ City<br></p>
-                    </div>
-                    <hr />
-                    <div class="col-md-12" style="text-align: center;">
-                        <p>&copy; 2025 SpeakYou. All rights reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        {% include 'footer.html' %}
     </div>
 
 </body>
