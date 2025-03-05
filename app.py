@@ -242,6 +242,15 @@ def goCheckIn():
     profile = Profile.query.get_or_404(user_id)
     return render_template('mood-overthe-week.html', profile=profile)
 
+@app.route("/chat")
+def goChat():
+    if 'user_id' not in session:
+        return redirect('/login')  # Redirect to signup if no user is in session
+    
+    user_id = session['user_id']
+    profile = Profile.query.get_or_404(user_id)
+    return render_template('chat.html', profile=profile)
+
 @app.errorhandler(404)
 def not_found(error):
     resp = make_response(render_template('error.html'), 404)

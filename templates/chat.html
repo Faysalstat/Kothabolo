@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SpeakYou</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/global.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <style>
+        .hero-section {
+            background-color: #fde4ec;
+            /* Pink background */
+            color: #214C3A;
+            /* Green text color */
+            padding: 60px 0;
+        }
+
+        .hero-section h1 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-section p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Primary (filled) button styling */
+        .hero-section .btn-primary {
+            background-color: #214C3A;
+            border-color: #214C3A;
+        }
+
+        .hero-section .btn-primary:hover {
+            background-color: #1b3c2e;
+            border-color: #1b3c2e;
+        }
+
+        /* Outline button styling */
+        .hero-section .btn-outline-primary {
+            color: #214C3A;
+            border-color: #214C3A;
+        }
+
+        .hero-section .btn-outline-primary:hover {
+            background-color: #214C3A;
+            color: #fff;
+            border-color: #214C3A;
+        }
+
+        .jumbotron-section {
+            background-color: #fde4ec;
+            min-height: 60vh;
+            /* or adjust as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Card styling */
+        .jumbotron-card {
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        /* Card content spacing */
+        .jumbotron-card .card-body {
+            padding: 24px;
+        }
+
+        /* Image spacing */
+        .chat-image {
+            width: 64px;
+            height: 64px;
+            margin-right: 16px;
+        }
+
+        /* Heading and link */
+        .jumbotron-card .card-title {
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .jumbotron-card a {
+            color: #0d6efd;
+            /* Default Bootstrap primary color */
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .jumbotron-card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        {% include 'sidenav.html' %}
+
+        <div class="main-content" style="padding-bottom: 100px; margin-bottom: 150px;">
+            {% include 'topnavbar.html' %}
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="container">
+                    <h1 class="text-center">Connect, Talk, and Grow with your AI besties!</h1>
+                    <p class="text-center">Enhance your social interactions and build healthy habits through meaningful conversations with
+                        advanced AI companions.</p>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-primary me-3">Start Chatting</a>
+                        <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <section class="jumbotron-section">
+                                <div class="container">
+                                    <div class="jumbotron-card card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <!-- Replace the 'src' with your 64x64 image path -->
+                                                <img src="/static/img/chatgpt.png" alt="ChatGPT"
+                                                    class="chat-image" />
+                                                <h5 class="card-title mb-0">ChatGPT</h5>
+                                            </div>
+                                            <p class="card-text">
+                                                Engage in deep conversations and get expert advice on various topics.
+                                            </p>
+                                            <a href="#">
+                                                Visit ChatGPT <span aria-hidden="true">→</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-4">
+                            <section class="jumbotron-section">
+                                <div class="container">
+                                    <div class="jumbotron-card card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <!-- Replace the 'src' with your 64x64 image path -->
+                                                <img src="/static/img/characterai.png" alt="ChatGPT"
+                                                    class="chat-image" />
+                                                <h5 class="card-title mb-0">Character AI</h5>
+                                            </div>
+                                            <p class="card-text">
+                                                Chat with AI personalities and develop social skills in a safe environment.
+                                            </p>
+                                            <a href="#">
+                                                Visit Character ai <span aria-hidden="true">→</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-4">
+                            <section class="jumbotron-section">
+                                <div class="container">
+                                    <div class="jumbotron-card card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <!-- Replace the 'src' with your 64x64 image path -->
+                                                <img src="/static/img/myai.png" alt="ChatGPT"
+                                                    class="chat-image" />
+                                                <h5 class="card-title mb-0">MyAI</h5>
+                                            </div>
+                                            <p class="card-text">
+                                                Your personal AI companion for daily conversations and emotional support.
+                                            </p>
+                                            <a href="#">
+                                                Visit My AI <span aria-hidden="true">→</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-md-12" style="background-color: #eee; padding: 10px;">
+                            <h4 class="text-center">Start your conversation</h4>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mt-4 p-5 rounded" style="background-color: #FFF;height: 200px;">
+                                        <i class="fa-solid fa-lightbulb" style="font-size: 2rem;color: #0d6efd;"></i>
+                                        <h5 class="card-title mt-2 mb-0">Self-Improvement</h5>
+                                        <p>"How can I develop better communication skills?"</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mt-4 p-5 rounded" style="background-color: #FFF;height: 200px;">
+                                        <i class="fa-solid fa-heart" style="font-size: 2rem;color: #0d6efd;"></i>
+                                        <h5 class="card-title mt-2 mb-0">Emotional Support</h5>
+                                        <p>"I'd like to discuss my feelings about..."</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mt-4 p-5 rounded" style="background-color: #FFF;height: 200px;">
+                                        <i class="fa-solid fa-user-friends" style="font-size: 2rem;color: #0d6efd;"></i>
+                                        <h5 class="card-title mt-2 mb-0">Scial Skills</h5>
+                                        <p>"How can I make meaningful connections?"</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col-md-6 mb-4">
+                                    <div class="d-flex">
+                                        <div class="icon" style="padding-right: 10px;">
+                                        <!-- Use any icon you like (Font Awesome example) -->
+                                        <i class="fa-solid fa-check-circle"></i>
+                                      </div>
+                                      <div style="margin-left: 5px;">
+                                        <h5 class="feature-title">24/7 Availability</h5>
+                                        <p class="mb-0">Access supportive conversations whenever you need them</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- Second Feature -->
+                                  <div class="col-md-6 mb-4">
+                                    <div class="d-flex">
+                                        <div class="icon" style="padding-right: 10px;">
+                                        <i class="fa-solid fa-seedling"></i>
+                                      </div>
+                                      <div style="margin-left: 5px;">
+                                        <h5 class="feature-title">Cognitive Development</h5>
+                                        <p class="mb-0">Enhance critical thinking through intelligent discussions</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- Third Feature -->
+                                  <div class="col-md-6 mb-4">
+                                    <div class="d-flex">
+                                      <div class="icon" style="padding-right: 10px;">
+                                        <i class="fa-solid fa-heart"></i>
+                                      </div>
+                                      <div style="margin-left: 5px;">
+                                        <h5 class="feature-title">Emotional Growth</h5>
+                                        <p class="mb-0">Practice emotional intelligence in a safe environment</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- Fourth Feature -->
+                                  <div class="col-md-6 mb-4">
+                                    <div class="d-flex">
+                                        <div class="icon" style="padding-right: 10px;">
+                                        <i class="fa-solid fa-repeat"></i>
+                                      </div>
+                                      <div style="margin-left: 5px;">
+                                        <h5 class="feature-title">Habit Formation</h5>
+                                        <p class="mb-0">Build positive social habits through regular interaction</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+        {% include 'footer.html' %}
+    </div>
+
+</body>
+
+</html>
